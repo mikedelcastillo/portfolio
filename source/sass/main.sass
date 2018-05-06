@@ -1,0 +1,213 @@
+@import source/sass/defaults
+
+@import url('https://fonts.googleapis.com/css?family=Chivo:900|Roboto:100|IBM+Plex+Mono:400,700')
+
+body, html
+  width: 100%
+  height: 100%
+  margin: 0
+  padding: 0
+  background-color: $color-dark
+  color: $color-light
+  font-family: $font-mono
+  font-size: $font-size
+
+*
+  position: relative
+  box-sizing: border-box
+
+.screen
+  width: 100%
+  height: 100%
+
+#loading-wrapper
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  background-color: darken($color-dark, 1.5)
+  display: flex
+  justify-content: center
+  align-items: center
+  $size: 50px
+  .spinner-wrapper
+    animation: spin infinite linear 0.5s
+    width: $size
+    height: $size
+    @keyframes spin
+      from
+        transform: rotate(0deg)
+      to
+        transform: rotate(360deg)
+    .mask
+      width: $size/2
+      height: $size/2
+      overflow: hidden
+      .circle
+        border-radius: 50%
+        border: 2px solid $color-main
+        width: $size
+        height: $size
+
+#splash-wrapper
+  width: 100%
+  height: calc(100% - 2em)
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  .background-image
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background-image: url(../img/assets/me.jpg)
+    background-position: center
+    background-repeat: no-repeat
+    background-size: cover
+    opacity: 0.1
+    .byline
+      position: absolute
+      font-size: 0.75em
+      bottom: 1em
+      right: 1em
+      color: white
+  .center-wrapper
+    flex-grow: 1
+    flex-shrink: 1
+    width: 100%
+    display: flex
+    justify-content: center
+    align-items: center
+    .text-wrapper
+      .name-wrapper
+        .nickname
+          font-family: $font-display
+          font-weight: 900
+          text-transform: lowercase
+          font-size: 6em
+          line-height: 1em
+          margin-left: -0.03em
+        .lastname
+          font-family: $font-mono
+          opacity: 0.5
+          text-transform: uppercase
+          font-weight: 700
+          letter-spacing: 0.22em
+          font-size: 1.44em
+          line-height: 1em
+          margin-top: -0.2em
+      .description
+        text-transform: uppercase
+        font-family: $font-mono
+        letter-spacing: 0.13em
+        margin-top: 2em
+        color: $color-main
+        span
+          color: $color-light
+          opacity: 0.5
+  .email-wrapper
+    flex-shrink: 0
+    flex-grow: 0
+    width: 100%
+    display: flex
+    justify-content: center
+    align-items: center
+    .email
+      display: block
+      padding: 2em
+      padding-bottom: 4em
+      color: white
+
+#items-wrapper
+  .center-wrapper
+    display: flex
+    flex-wrap: wrap
+    $gutter: 5px
+    $details-padding: 1em
+    $min-prev-width: 300px
+    $break-1: $gutter * 3 + $min-prev-width * 2
+    $break-2: $break-1 + $gutter + $min-prev-width
+    $break-3: $break-2 + $gutter + $min-prev-width
+    margin: 0 $gutter
+    margin-top: $gutter
+    .item
+      margin-bottom: $gutter
+      +range(0, $break-1 - 1)
+        width: 100%
+      +range($break-1, $break-2 - 1)
+        width: calc(50% - #{$gutter * 1 / 2})
+        &:nth-of-type(2n)
+          margin-left: $gutter
+      +range($break-2, $break-3 - 1)
+        width: calc(33.3333% - #{$gutter * 2 / 3})
+        &:nth-of-type(3n), &:nth-of-type(3n - 1)
+          margin-left: $gutter
+      +range($break-3)
+        width: calc(25% - #{$gutter * 3 / 4})
+        &:nth-of-type(4n), &:nth-of-type(4n - 1), &:nth-of-type(4n - 2)
+          margin-left: $gutter
+      &, *
+        text-decoration: none
+        transition: all 0.3s
+        cursor: pointer
+      .image-wrapper
+        top: 0
+        width: 100%
+        opacity: 1
+        filter: grayscale(1)
+        .image
+          position: absolute
+          top: 0
+          left: 0
+          width: 100%
+          height: 100%
+          background-position: top center
+          background-repeat: no-repeat
+          background-size: cover
+        .sizer
+          width: 100%
+          padding-bottom: 65%
+          z-index: 1
+          opacity: 0.75
+          background: linear-gradient(to top, transparentize($color-dark, 0), transparentize($color-dark, 1))
+      .details-wrapper
+        position: absolute
+        left: 0
+        top: 0
+        height: 100%
+        padding: $details-padding
+        padding-bottom: 0
+        width: 100%
+        color: white
+        text-decoration: none
+        opacity: 0
+        display: flex
+        justify-content: center
+        align-items: center
+        text-align: center
+        flex-direction: column
+        .name, .domain
+          width: 100%
+          overflow: hidden
+          text-overflow: ellipsis
+          white-space: nowrap
+        .name
+          font-family: $font-main
+          font-weight: 100
+          font-size: 1.2em
+        .domain
+          font-family: $font-mono
+          font-weight: 400
+          opacity: 0.5
+          font-size: 0.8em
+      &:hover
+        .image-wrapper
+          opacity: 0.1
+          filter: grayscale(0)
+          .sizer
+            opacity: 0
+        .details-wrapper
+          opacity: 1
+          padding: $details-padding

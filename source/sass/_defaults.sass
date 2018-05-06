@@ -1,0 +1,32 @@
+$color-dark: #0d0d0d
+$color-light: white
+
+$color-main: #2D9CDB
+$color-accent: #BB6BD9
+
+$color-red: #f23737
+$color-green: #16c15e
+
+$color-yellow: #FECB2F
+
+$font-main: 'Roboto', sans-serif
+$font-display: 'Chivo', sans-serif
+$font-mono: 'IBM Plex Mono', monospace
+
+$font-size: 16px
+
+@mixin range($from, $to: -1)
+  @if ($to == -1)
+    @media screen and (min-width: #{$from})
+      @content
+  @else
+    @media screen and (min-width: #{$from}) and (max-width: #{$to})
+      @content
+
+@mixin rangeh($from, $to: -1)
+  @if ($to == -1)
+    @media screen and (min-height: #{$from})
+      @content
+  @else
+    @media screen and (min-height: #{$from}) and (max-height: #{$to})
+      @content

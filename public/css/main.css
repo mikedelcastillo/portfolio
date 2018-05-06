@@ -1,0 +1,400 @@
+@import url("https://fonts.googleapis.com/css?family=Chivo:900|Roboto:100|IBM+Plex+Mono:400,700");
+body, html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #0d0d0d;
+  color: white;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 16px;
+}
+
+* {
+  position: relative;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.screen {
+  width: 100%;
+  height: 100%;
+}
+
+#loading-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #090909;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+     -moz-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+#loading-wrapper .spinner-wrapper {
+  -webkit-animation: spin infinite linear 0.5s;
+     -moz-animation: spin infinite linear 0.5s;
+       -o-animation: spin infinite linear 0.5s;
+          animation: spin infinite linear 0.5s;
+  width: 50px;
+  height: 50px;
+}
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@-moz-keyframes spin {
+  from {
+    -moz-transform: rotate(0deg);
+         transform: rotate(0deg);
+  }
+  to {
+    -moz-transform: rotate(360deg);
+         transform: rotate(360deg);
+  }
+}
+@-o-keyframes spin {
+  from {
+    -o-transform: rotate(0deg);
+       transform: rotate(0deg);
+  }
+  to {
+    -o-transform: rotate(360deg);
+       transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+       -moz-transform: rotate(0deg);
+         -o-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+       -moz-transform: rotate(360deg);
+         -o-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+#loading-wrapper .spinner-wrapper .mask {
+  width: 25px;
+  height: 25px;
+  overflow: hidden;
+}
+#loading-wrapper .spinner-wrapper .mask .circle {
+  -webkit-border-radius: 50%;
+     -moz-border-radius: 50%;
+          border-radius: 50%;
+  border: 2px solid #2D9CDB;
+  width: 50px;
+  height: 50px;
+}
+
+#splash-wrapper {
+  width: 100%;
+  height: -webkit-calc(100% - 2em);
+  height: -moz-calc(100% - 2em);
+  height: calc(100% - 2em);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+     -moz-box-orient: vertical;
+     -moz-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+     -moz-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+#splash-wrapper .background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(../img/assets/me.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+     -moz-background-size: cover;
+       -o-background-size: cover;
+          background-size: cover;
+  opacity: 0.1;
+}
+#splash-wrapper .background-image .byline {
+  position: absolute;
+  font-size: 0.75em;
+  bottom: 1em;
+  right: 1em;
+  color: white;
+}
+#splash-wrapper .center-wrapper {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+     -moz-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -webkit-flex-shrink: 1;
+      -ms-flex-negative: 1;
+          flex-shrink: 1;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+     -moz-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+#splash-wrapper .center-wrapper .text-wrapper .name-wrapper .nickname {
+  font-family: "Chivo", sans-serif;
+  font-weight: 900;
+  text-transform: lowercase;
+  font-size: 6em;
+  line-height: 1em;
+  margin-left: -0.03em;
+}
+#splash-wrapper .center-wrapper .text-wrapper .name-wrapper .lastname {
+  font-family: "IBM Plex Mono", monospace;
+  opacity: 0.5;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  font-size: 1.44em;
+  line-height: 1em;
+  margin-top: -0.2em;
+}
+#splash-wrapper .center-wrapper .text-wrapper .description {
+  text-transform: uppercase;
+  font-family: "IBM Plex Mono", monospace;
+  letter-spacing: 0.13em;
+  margin-top: 2em;
+  color: #2D9CDB;
+}
+#splash-wrapper .center-wrapper .text-wrapper .description span {
+  color: white;
+  opacity: 0.5;
+}
+#splash-wrapper .email-wrapper {
+  -webkit-flex-shrink: 0;
+      -ms-flex-negative: 0;
+          flex-shrink: 0;
+  -webkit-box-flex: 0;
+  -webkit-flex-grow: 0;
+     -moz-box-flex: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+     -moz-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+#splash-wrapper .email-wrapper .email {
+  display: block;
+  padding: 2em;
+  padding-bottom: 4em;
+  color: white;
+}
+
+#items-wrapper .center-wrapper {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  margin: 0 5px;
+  margin-top: 5px;
+}
+#items-wrapper .center-wrapper .item {
+  margin-bottom: 5px;
+}
+@media screen and (min-width: 0) and (max-width: 614px) {
+  #items-wrapper .center-wrapper .item {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 615px) and (max-width: 919px) {
+  #items-wrapper .center-wrapper .item {
+    width: -webkit-calc(50% - 2.5px);
+    width: -moz-calc(50% - 2.5px);
+    width: calc(50% - 2.5px);
+  }
+  #items-wrapper .center-wrapper .item:nth-of-type(2n) {
+    margin-left: 5px;
+  }
+}
+@media screen and (min-width: 920px) and (max-width: 1224px) {
+  #items-wrapper .center-wrapper .item {
+    width: -webkit-calc(33.3333% - 3.3333333333px);
+    width: -moz-calc(33.3333% - 3.3333333333px);
+    width: calc(33.3333% - 3.3333333333px);
+  }
+  #items-wrapper .center-wrapper .item:nth-of-type(3n), #items-wrapper .center-wrapper .item:nth-of-type(3n - 1) {
+    margin-left: 5px;
+  }
+}
+@media screen and (min-width: 1225px) {
+  #items-wrapper .center-wrapper .item {
+    width: -webkit-calc(25% - 3.75px);
+    width: -moz-calc(25% - 3.75px);
+    width: calc(25% - 3.75px);
+  }
+  #items-wrapper .center-wrapper .item:nth-of-type(4n), #items-wrapper .center-wrapper .item:nth-of-type(4n - 1), #items-wrapper .center-wrapper .item:nth-of-type(4n - 2) {
+    margin-left: 5px;
+  }
+}
+#items-wrapper .center-wrapper .item, #items-wrapper .center-wrapper .item * {
+  text-decoration: none;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+#items-wrapper .center-wrapper .item .image-wrapper {
+  top: 0;
+  width: 100%;
+  opacity: 1;
+  -webkit-filter: grayscale(1);
+          filter: grayscale(1);
+}
+#items-wrapper .center-wrapper .item .image-wrapper .image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-position: top center;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+     -moz-background-size: cover;
+       -o-background-size: cover;
+          background-size: cover;
+}
+#items-wrapper .center-wrapper .item .image-wrapper .sizer {
+  width: 100%;
+  padding-bottom: 65%;
+  z-index: 1;
+  opacity: 0.75;
+  background: -webkit-gradient(linear, left bottom, left top, from(#0d0d0d), to(rgba(13, 13, 13, 0)));
+  background: -webkit-linear-gradient(bottom, #0d0d0d, rgba(13, 13, 13, 0));
+  background: -moz-linear-gradient(bottom, #0d0d0d, rgba(13, 13, 13, 0));
+  background: -o-linear-gradient(bottom, #0d0d0d, rgba(13, 13, 13, 0));
+  background: linear-gradient(to top, #0d0d0d, rgba(13, 13, 13, 0));
+}
+#items-wrapper .center-wrapper .item .details-wrapper {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  padding: 1em;
+  padding-bottom: 0;
+  width: 100%;
+  color: white;
+  text-decoration: none;
+  opacity: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+     -moz-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+     -moz-box-orient: vertical;
+     -moz-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+#items-wrapper .center-wrapper .item .details-wrapper .name, #items-wrapper .center-wrapper .item .details-wrapper .domain {
+  width: 100%;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+     text-overflow: ellipsis;
+  white-space: nowrap;
+}
+#items-wrapper .center-wrapper .item .details-wrapper .name {
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  font-size: 1.2em;
+}
+#items-wrapper .center-wrapper .item .details-wrapper .domain {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 400;
+  opacity: 0.5;
+  font-size: 0.8em;
+}
+#items-wrapper .center-wrapper .item:hover .image-wrapper {
+  opacity: 0.1;
+  -webkit-filter: grayscale(0);
+          filter: grayscale(0);
+}
+#items-wrapper .center-wrapper .item:hover .image-wrapper .sizer {
+  opacity: 0;
+}
+#items-wrapper .center-wrapper .item:hover .details-wrapper {
+  opacity: 1;
+  padding: 1em;
+}

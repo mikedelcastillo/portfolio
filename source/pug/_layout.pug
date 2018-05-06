@@ -1,0 +1,61 @@
+-
+  themeColor = "#B8860B";
+  iconLink = faviconLink = null;
+  siteName = "Mike del Castillo";
+  siteDescription = "I am a full-stack web developer and a designer.";
+  siteImage = "http://mikedc.io/img/preview.jpg";
+  twitterHandle = "@mikedelcastillo";
+  siteUrl = "http://mikedc.io"
+  googleAnalytics = "UA-83748025-2";
+
+doctype html
+html
+  head
+    block head
+      block title
+        title Mike del Castillo
+    block meta
+      meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no")
+      meta(charset="utf-8")
+      meta(developer="Mike del Castillo" site="http://mikedc.io")
+        
+      meta(name="msapplication-tap-highlight" content="no")
+        
+      meta(name="theme-color" content=themeColor)
+      meta(name="apple-mobile-web-app-status-bar-style" content=themeColor)
+      meta(name="mobile-web-app-status-bar-style" content=themeColor)
+        
+      meta(name="apple-mobile-web-app-capable" content="yes")
+      meta(name="mobile-web-app-capable" content="yes")
+      
+      link(rel="apple-touch-icon" sizes="192x192" href=iconLink)
+      link(rel="shortcut icon" href=faviconLink type="image/x-icon")
+      link(rel="icon" href=faviconLink type="image/x-icon")
+        
+      meta(name="og:title" content=title)
+      meta(name="og:type" content="website")
+      meta(name="og:url" content=siteUrl)
+      meta(name="og:image" content=siteImage)
+      meta(name="og:site_name" content=siteName)
+      meta(name="og:description" content=siteDescription)
+      
+      meta(name="google-analytics" content=googleAnalytics)
+        
+      meta(name="format-detection" content="telephone=no")
+      
+      meta(name="twitter:card" content="summary_large_image")
+      meta(name="twitter:site" content=twitterHandle)
+      meta(name="twitter:title" content=title)
+      meta(name="twitter:description" content=siteDescription)
+      meta(name="twitter:creator" content=twitterHandle)
+
+      meta(name="twitter:image:src" content=siteImage)
+      title Tahanan Project
+      link(rel="stylesheet" type="text/css" href="css/main.css" + "?v=" + (new Date().getTime()))
+      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-83748025-2"></script>
+      script window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-83748025-2');
+    block css
+      link(rel="stylesheet" type="text/css" href="/css/main.css")
+  body
+    #app
+    block js
